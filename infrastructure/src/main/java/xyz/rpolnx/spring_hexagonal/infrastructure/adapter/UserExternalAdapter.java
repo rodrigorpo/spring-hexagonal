@@ -56,7 +56,7 @@ public class UserExternalAdapter implements CreateUserPort, DeleteUserPort, GetA
 
     @Override
     public void update(User user, UUID id) {
-        UserEntity entity = new UserEntity(user.getId(), user.getName());
+        UserEntity entity = new UserEntity(id, user.getName());
 
         repository.save(entity);
     }

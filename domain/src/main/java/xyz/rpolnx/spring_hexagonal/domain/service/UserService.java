@@ -43,19 +43,18 @@ public class UserService implements CreateUserUseCase, DeleteUserUseCase, GetAll
                 .orElseThrow(() -> new NotFoundException("User not found"));
     }
 
-
     @Override
     public User create(User user) {
         return createUser.create(user);
     }
 
     @Override
-    public void delete(UUID id) {
-        deleteUser.delete(id);
+    public void update(User user, UUID id) {
+        updateUser.update(user, id);
     }
 
     @Override
-    public void update(User user, UUID id) {
-        updateUser.update(user, id);
+    public void delete(UUID id) {
+        deleteUser.delete(id);
     }
 }
