@@ -56,7 +56,7 @@ public class UserController {
     @ResponseStatus(CREATED)
     public UserDTO create(@RequestBody UserDTO userDTO) {
         User user = createUser.create(userDTO.toUser());
-        return UserDTO.fromUser(user);
+        return UserDTO.fromUser(user).onlyId();
     }
 
     @PutMapping("/{id}")
