@@ -3,6 +3,7 @@ package xyz.rpolnx.spring_hexagonal.application.model;
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 import static lombok.AccessLevel.PRIVATE;
 
+import java.util.Objects;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -25,6 +26,10 @@ public class UserDTO {
     }
 
     public static UserDTO fromUser(User user) {
+        if(Objects.isNull(user)) {
+            return null;
+        }
+
         return new UserDTO(user.getId(), user.getName());
     }
 
