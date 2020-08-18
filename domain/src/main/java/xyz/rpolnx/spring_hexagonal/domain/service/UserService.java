@@ -45,7 +45,7 @@ public class UserService implements CreateUserUseCase, DeleteUserUseCase, GetAll
 
     @Override
     public User create(User user) {
-        return createUser.create(user);
+        return createUser.create(user.withGenerateId());
     }
 
     @Override

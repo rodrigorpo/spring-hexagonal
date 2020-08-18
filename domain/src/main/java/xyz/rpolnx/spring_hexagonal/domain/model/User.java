@@ -12,4 +12,9 @@ import lombok.NoArgsConstructor;
 public class User {
     private UUID id;
     private String name;
+
+    public User withGenerateId() {
+        this.id = UUID.randomUUID();
+        return this;
+    }
 }
