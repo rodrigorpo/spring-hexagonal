@@ -21,16 +21,16 @@
         <dependency>
             <groupId>xyz.rpolnx</groupId>
             <artifactId>domain</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>xyz.rpolnx</groupId>
             <artifactId>infrastructure</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
-
     </dependencies>
+
 
     <build>
         <plugins>

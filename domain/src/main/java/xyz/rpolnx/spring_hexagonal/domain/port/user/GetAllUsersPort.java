@@ -6,5 +6,5 @@ import java.util.Optional;
 import xyz.rpolnx.spring_hexagonal.domain.model.User;
 
 public interface GetAllUsersPort {
-    List<Optional<User>> getAll();
+    List<User> getAll();
 }

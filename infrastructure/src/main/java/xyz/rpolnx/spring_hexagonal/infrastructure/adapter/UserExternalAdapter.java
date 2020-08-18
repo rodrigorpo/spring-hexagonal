@@ -30,13 +30,12 @@ public class UserExternalAdapter implements CreateUserPort, DeleteUserPort, GetA
     private int PAGE_SIZE;
 
     @Override
-    public List<Optional<User>> getAll() {
+    public List<User> getAll() {
         PageRequest pageRequest = PageRequest.of(0, PAGE_SIZE);
 
         return repository.findAll(pageRequest)
                 .map(UserFactory::fromEntity)
                 .get()
-                .map(Optional::of)
                 .collect(Collectors.toList());
     }
 
