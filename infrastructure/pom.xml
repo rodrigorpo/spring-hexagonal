@@ -18,6 +18,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
             <groupId>xyz.rpolnx</groupId>
             <artifactId>domain</artifactId>
             <version>${project.parent.version}</version>
