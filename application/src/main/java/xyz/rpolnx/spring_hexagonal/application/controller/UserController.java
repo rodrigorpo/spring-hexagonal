@@ -8,6 +8,9 @@ import static org.springframework.http.HttpStatus.OK;
 import java.util.List;
 import java.util.UUID;
 
+import javax.validation.Valid;
+
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -54,7 +57,7 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public UserDTO create(@RequestBody UserDTO userDTO) {
+    public UserDTO create(@RequestBody @Valid UserDTO userDTO) {
         User user = createUser.create(userDTO.toUser());
         return UserDTO.fromUser(user).onlyId();
     }

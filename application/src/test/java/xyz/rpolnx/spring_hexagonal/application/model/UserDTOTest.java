@@ -44,12 +44,6 @@ public class UserDTOTest {
     }
 
     @Test
-    @DisplayName("When user is null, should dto should be null")
-    public void shouldReturnNull() {
-        assertNull(UserDTO.fromUser(null));
-    }
-
-    @Test
     @DisplayName("When calling method, should convert itself to User")
     public void shouldConvertDtoToUser() {
         UUID id = UUID.randomUUID();
