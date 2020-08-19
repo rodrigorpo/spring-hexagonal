@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.Objects;
 import java.util.UUID;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -64,6 +63,21 @@ public class UserDTOTest {
 
         UserDTO nullUserDto = null;
         assertThrows(NullPointerException.class, () -> nullUserDto.toUser());
+    }
+
+    @Test
+    @DisplayName("When calling method, should generate id")
+    public void shouldGenerateNewId() {
+        UUID id = UUID.randomUUID();
+        UserDTO userDTO = new UserDTO();
+
+        userDTO.setId(id);
+        userDTO.setName("Testing");
+
+        UserDTO actual = userDTO.onlyId();
+
+        assertEquals(id, actual.getId());
+        assertNull(actual.getName());
     }
 
 }
